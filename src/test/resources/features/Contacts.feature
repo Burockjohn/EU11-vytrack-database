@@ -11,7 +11,7 @@ Feature: Contacts page
     Given the user is on the login page
     And the user enters the sales manager information
     When the user navigates to "Activities" "Calendar Events"
-    Then the title contains "Calendars"
+    Then the title contains "Calendar"
    #added "s" at the end of calendar to fail
 
   Scenario: Menu Options Driver
@@ -21,7 +21,6 @@ Feature: Contacts page
       | Customers  |
       | Activities |
       | System     |
-
 
 
   Scenario: Menu Options Sales Manager
@@ -42,8 +41,8 @@ Feature: Contacts page
     When the user logs in using following credentials
       | username  | user10      |
       | password  | UserUser123 |
-      | firstname | Brenden     |
-      | lastname  | Schneider   |
+      | firstname | Ara         |
+      | lastname  | Ondricka    |
     Then the user should be able to login
 
 
@@ -57,26 +56,26 @@ Feature: Contacts page
     Then the user should be able to login
 
     Examples:
-      | user           | firstName | lastName  |
-      | user10         | Brenden   | Schneider |
-      | storemanager85 | Stephan   | Haley     |
+      | user           | firstName | lastName         |
+      | user10         | Ara       | Ondricka         |
+      | storemanager85 | Pearl     | Tremaine Wuckert |
 
- @db
-    Scenario: Contact test with email
-      Given the user logged in as "sales manager"
-      And the user navigates to "Customers" "Contacts"
-      When the user clicks the "mrjakc@mail.ru" from contacts
-      Then the information should be same with database
+  #@db
+  Scenario: Contact test with email
+    Given the user logged in as "sales manager"
+    And the user navigates to "Customers" "Contacts"
+    When the user clicks the "mrjakc@mail.ru" from contacts
+    Then the information should be same with database
 
-   @db @wip
-   Scenario: Contact test with email
+  #@db @wip
+  Scenario: Contact test with email
     Given the user logged in as "sales manager"
     And the user navigates to "Customers" "Contacts"
     When the user clicks the "jakop@gmail.com" from contacts
     Then the information for "jakop@gmail.com" should be same with database
 
 
-   @db
+  #@db
   Scenario Outline: Contact test with email
     Given the user logged in as "sales manager"
     And the user navigates to "Customers" "Contacts"
@@ -84,10 +83,10 @@ Feature: Contacts page
     Then the information for "<email>" should be same with database
 
     Examples:
-    |email|
-    |mbrackstone9@example.com|
-    |jakop@gmail.com|
-    |oscar@gmail.com  |
+      | email                    |
+      | mbrackstone9@example.com |
+      | jakop@gmail.com          |
+      | oscar@gmail.com          |
 
 
 
