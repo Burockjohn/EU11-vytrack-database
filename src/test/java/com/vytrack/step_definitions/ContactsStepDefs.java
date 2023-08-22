@@ -127,7 +127,7 @@ public class ContactsStepDefs {
         //get information from database
         String query= "select concat(first_name,' ',last_name) as full_name, e.email\n" +
                 "from orocrm_contact c inner join orocrm_contact_email e on c.id = e.owner_id where\n" +
-                "       e.email = 'jakop@gmail.com'";
+                "       e.email = '"+email+"'";
 
         //create the connection to qa3 env
         // DBUtils.createConnection();
