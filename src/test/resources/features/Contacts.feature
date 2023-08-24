@@ -64,15 +64,15 @@ Feature: Contacts page
   Scenario: Contact test with email
     Given the user logged in as "sales manager"
     And the user navigates to "Customers" "Contacts"
-    When the user clicks the "mrjakc@mail.ru" from contacts
+    When the user clicks the "smyvbsjn@gmail.com" from contacts
     Then the information should be same with database
 
-  #@db @wip
+  @wip @db
   Scenario: Contact test with email
     Given the user logged in as "sales manager"
     And the user navigates to "Customers" "Contacts"
-    When the user clicks the "jakop@gmail.com" from contacts
-    Then the information for "jakop@gmail.com" should be same with database
+    When the user clicks the "smyvbsjn@gmail.com" from contacts
+    Then the information for "smyvbsjn@gmail.com" should be same with database
 
 
   #@db
